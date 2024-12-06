@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>
+            Polynomial Time Algorithm for Solving Maximum Agreement Cherry
+            Reduced Subnetworks of Level-1 Orchards
+          </h3>
+          <small> Hamza Wahed </small>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Motivation</h3>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Outline</h3>
+          <ul>
+            <li>Phylogenetic Networks</li>
+            <li>Orchard Networks and Cherry Picking Sequences</li>
+            <li>Algorithm</li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Outline</h3>
+          <ul>
+            <li>Phylogenetic Networks</li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Phylogenetic Networks</h3>
+          <img src="./public/phylo.png" width="700" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Phylogenetic Networks</h3>
+          <img src="./public/triticale.jpg" width="700" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Phylogenetic Networks</h3>
+          <img src="./public/phylo-network.jpeg" width="500" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Phylogenetic Networks</h3>
+          <img
+            src="./public/phylo-network-full.jpeg"
+            width="400"
+            height="auto"
+          />
+        </section>
+
+        <!-- Add vertex degree constraints -->
+        <section data-auto-animate>
+          <h3>Phylogenetic Networks</h3>
+          <p>
+            A phylogenetic tree is a graph \(G = (V,E,\rho) \) with a taxon
+            labelling function \( \phi : X \to V \) that assigns a set of taxa
+            to every leaf, and none to the internal vertices.
+          </p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Outline</h3>
+          <ul>
+            <li>Phylogenetic Networks</li>
+            <li>Orchard Networks and Cherry Picking Sequences</li>
+            <li>Algorithm</li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Outline</h3>
+          <ul>
+            <li>Orchard Networks and Cherry Picking Sequences</li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Cherries</h3>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Cherries</h3>
+          <ul>
+            <li>Simple Cherry</li>
+            <li>Reticulated Cherry</li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Simply Cherry</h3>
+          <img src="./public/simple-cherry.jpeg" width="50%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Simply Cherry</h3>
+          <div class="container">
+            <img src="./public/simple-cherry.jpeg" width="50%" height="auto" />
+            <ul>
+              <li>\( x \) and $ y $ are leaves</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Simply Cherry</h3>
+          <div class="container">
+            <img src="./public/simple-cherry.jpeg" width="50%" height="auto" />
+            <ul>
+              <li>\( x \) and $ y $ are leaves</li>
+              <li>$ p_x $ is a tree vertex</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <img src="./public/ret-cherry.jpeg" width="50%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <div class="container">
+            <img src="./public/ret-cherry.jpeg" width="50%" height="auto" />
+            <ul>
+              <li>$ x $ and $ y $ are leaves</li>
+              <li>$ p_x $ is a reticulation</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Picking Cherries</h3>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Simple Cherry</h3>
+          <img
+            src="./public/simple-cherry-taxa.jpeg"
+            width="50%"
+            height="auto"
+          />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Simple Cherry</h3>
+          <div class="container">
+            <img
+              src="./public/simple-cherry-taxa.jpeg"
+              width="50%"
+              height="auto"
+            />
+
+            <img
+              src="./public/simple-cherry-picked.jpeg"
+              width="50%"
+              height="auto"
+            />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <img src="./public/ret-cherry-taxa.jpeg" width="50%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <img src="./public/ret-cherry-taxa2.jpeg" width="50%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <img src="./public/ret-cherry-taxa3.jpeg" width="50%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <div class="container">
+            <img
+              src="./public/ret-cherry-taxa3.jpeg"
+              width="50%"
+              height="auto"
+            />
+
+            <img src="./public/ret-cherry-del.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Reticulated Cherry</h3>
+          <img
+            src="./public/ret-cherry-reduced.jpeg"
+            width="50%"
+            height="auto"
+          />
+        </section>
+
+        <section data-transition-speed="zoom">
+          <h3>Orchard Networks</h3>
+          <p>\(S = \langle \rangle \)</p>
+          <img src="./public/orchard-1.png" width="80%" height="80%" />
+        </section>
+
+        <section data-transition-speed="zoom">
+          <h3>Orchard Networks</h3>
+          <p>\(S = \langle (c,b) \rangle \)</p>
+          <img src="./public/orchard-2.png" width="80%" height="80%" />
+        </section>
+
+        <section data-transition-speed="fast">
+          <h3>Orchard Networks</h3>
+          <p>\(S = \langle (c,b), (a,r) \rangle \)</p>
+          <img src="./public/orchard-3.png" width="80%" height="80%" />
+        </section>
+
+        <section data-transition-speed="fast">
+          <h3>Orchard Networks</h3>
+          <p>\(S = \langle (c,b), (a,r), (u,v) \rangle \)</p>
+          <img src="./public/orchard-4.png" width="60%" height="60%" />
+        </section>
+
+        <!-- Algorithm description -->
+        <section data-auto-animate>
+          <h3>Outline</h3>
+          <ul>
+            <li>Phylogenetic Networks</li>
+            <li>Orchard Networks and Cherry-Picking Sequences</li>
+            <li>Algorithm</li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Outline</h3>
+          <ul>
+            <li>Algorithm</li>
+          </ul>
+        </section>
+
+        <!-- We'll explain this definition recursively like good computer scientists -->
+        <!-- so to understand MACRS -->
+        <section data-auto-animate>
+          <h3><u>MACRS?</u></h3>
+        </section>
+
+        <!-- we need to know what an ACRS is -->
+        <section data-auto-animate>
+          <h3>M<u>ACRS?</u></h3>
+        </section>
+
+        <!-- and of course to understand an ACRS, we need to do what CRS is  -->
+        <section data-auto-animate>
+          <h3>MA<u>CRS?</u></h3>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Cherry Reduced Subnetwork</h3>
+          <p>
+            A <em>cherry reduced subnetwork</em> of an orchard network $N$ is an
+            orchard network $N^*$, such that there exists a cherry picking
+            sequence $S$ for which $N \langle S \rangle = N^*$.
+          </p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/orchard-1.png" width="50%" height="auto" />
+            <img src="./public/orchard-2.png" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/orchard-1.png" width="50%" height="auto" />
+            <img src="./public/orchard-2.png" width="50%" height="auto" />
+          </div>
+          <p>$$N_1 \langle (c,b) \rangle = N_2$$</p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/orchard-1.png" width="50%" height="auto" />
+            <img src="./public/orchard-2.png" width="50%" height="auto" />
+          </div>
+          <p>$$N_1 \langle (c,b) \rangle = N_2$$</p>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <p>
+            An <em>agreement cherry reduced subnetwork</em> of orchard networks
+            $N_1$ and $N_2$ is an orchard network $N^*$, such that there exists
+            cherry picking sequences $S_1$ for which $N_1 \langle S_1 \rangle =
+            N^*$ and $N_1 \langle S_2 \rangle = N^*$.
+          </p>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/acrs1.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/acrs12.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs21.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs26.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs23.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs24.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <div class="container">
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Can we do better?</h3>
+        </section>
+
+        <!-- Weak vs Strong isomorphism -->
+        <section>
+          <h3>Strong vs Weak Isomorphism</h3>
+        </section>
+
+        <section>
+          <h3>Strong Isomorphism</h3>
+          <div class="container">
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+            <img src="./public/acrs25.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Weak Isomorphism</h3>
+          <div class="container">
+            <img src="./public/weak1.jpeg" width="50%" height="auto" />
+            <img src="./public/weak2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Weak Isomorphism</h3>
+          <div class="container">
+            <img src="./public/weak1.jpeg" width="50%" height="auto" />
+            <img src="./public/weak3.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>$2$-edge connected components</h5>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>$2$-edge connected components</h5>
+          <p>
+            Cutting a single edge from a connected component does <u>not</u>
+            make it disconnected.
+          </p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>$2$-edge connected components</h5>
+          <img src="./public/2-edge.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>$2$-edge connected components</h5>
+          <img src="./public/not-2-edge.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>$2$-edge connected components</h5>
+          <img src="./public/not-2-edge1.jpeg" width="50%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>$2$-edge connected components</h5>
+          <img src="./public/2-edge.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Recall:</h5>
+          <img
+            src="./public/simple-cherry-taxa.jpeg"
+            width="50%"
+            height="auto"
+          />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Recall:</h5>
+          <img src="./public/ret-cherry-taxa2.jpeg" width="40%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Trivial Components</h5>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Base case</h5>
+          <p>
+            $u$ or $v$ is a leaf: $$ \begin{cases} 1 & \text{if \(X(u) \cap X(v)
+            \neq \emptyset \)} \\ -\infty & \text{otherwise} \end{cases} $$
+          </p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Tree Vertices</h5>
+          <img src="./public/tree1.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Tree Vertices</h5>
+          <img src="./public/tree2.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Tree Vertices</h5>
+          <img src="./public/tree3.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Non-Trivial Components</h5>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Non-Trivial Components</h5>
+          <img src="./public/Non-trivial.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Non-Trivial Components</h5>
+          <img src="./public/Non-trivial2.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Non-Trivial Components</h5>
+          <img src="./public/Non-trivial3.jpeg" width="80%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <h5>Non-Trivial Components</h5>
+          <p>$9$ possible choices, but not all are viable</p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <p>Cannot compare trivial and non-trivial components</p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/Ex1.jpeg" width="50%" height="auto" />
+            <img src="./public/Ex2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/Todo.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/Todo 3.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 4.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/Todo 5.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 6.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <p>We get an ACRS of size of $8$</p>
+          <div class="container">
+            <img src="./public/Todo 5.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 6.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/Ex1.jpeg" width="50%" height="auto" />
+            <img src="./public/Ex2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/Todo 7.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 8.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/Todo 9.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 10.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/Todo 11.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 12.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <p>We get an ACRS of size $13$</p>
+          <div class="container">
+            <img src="./public/Todo 11.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 12.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <p>The MACRS is of size $13$</p>
+          <div class="container">
+            <img src="./public/Todo 11.jpeg" width="50%" height="auto" />
+            <img src="./public/Todo 12.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Time Complexity?</h3>
+          <p>
+            Memoize the MACRS for each pair of vertices $(u,v)$ and the choices
+            we made for each component. $$ D[u,v,e,f] $$ where $e$ and $f$ are
+            either a reticulate edges or "None".
+          </p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Time Complexity</h3>
+          <p>$$ O(n^2) $$</p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Time Complexity</h3>
+          <p>From $O(3^r n^3)$ time to $ O(n^2) $</p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>What's Next</h3>
+        </section>
+
+        <section data-auto-animate>
+          <h3>What's Next</h3>
+          <ul>
+            <li>Can we do it in FPT with the level as the parameter?</li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>What's Next</h3>
+          <ul>
+            <li>Can we do it in FPT with the level as the parameter?</li>
+            <li>Is cherry-picking the best measure?</li>
+          </ul>
+        </section>
+
+        <section>
+          <iframe
+            src="https://giphy.com/embed/Vi5TUmZz8LZb95j2xb"
+            width="480"
+            height="360"
+            style=""
+            frameborder="0"
+            class="giphy-embed"
+            allowfullscreen
+          ></iframe>
+          <p>Thank you!</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="../plugin/math/math.js"></script>
+    <script>
+      // Reveal.initialize({
+      // 	hash: true,
+      // 	plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      // });
+      Reveal.initialize({
+        katex: {
+          version: "latest",
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true },
+          ],
+          history: true,
+          ignoredTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+        slideNumber: true,
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+        ],
+      });
+    </script>
+  </body>
+</html>
