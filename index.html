@@ -84,7 +84,14 @@
           />
         </section>
 
-        <!-- Add vertex degree constraints -->
+        <section data-auto-animate>
+          <h3>Phylogenetic Networks</h3>
+          <p>
+            A network is a graph $G = (V,E,\rho)$ with a taxon labelling
+            function $\phi$, that only assings labels to leaf vertices.
+          </p>
+        </section>
+
         <section data-auto-animate>
           <h3>Phylogenetic Networks</h3>
           <p>binary phylogenetic networks</p>
@@ -94,7 +101,7 @@
           <h3>Phylogenetic Networks</h3>
           <p>binary phylogenetic networks</p>
           <ul>
-            <li>The root $\rho$ has out-degree $1$ and in-degree $0$</li>
+            <li>The root only has $1$ child</li>
           </ul>
         </section>
 
@@ -102,8 +109,8 @@
           <h3>Phylogenetic Networks</h3>
           <p>binary phylogenetic networks</p>
           <ul>
-            <li>The root $\rho$ has out-degree $1$ and in-degree $0$</li>
-            <li>Any reticulation $r$ has out-degree $1$ and in-degree $2$</li>
+            <li>The root only has $1$ child</li>
+            <li>Any reticulation $r$ has $2$ parents and $1$ child</li>
           </ul>
         </section>
 
@@ -233,7 +240,7 @@
           <div class="container">
             <img src="./public/simple-cherry.jpeg" width="50%" height="auto" />
             <ul>
-              <li>\( x \) and $ y $ are leaves</li>
+              <li>$x$ and $y$ are leaves</li>
             </ul>
           </div>
         </section>
@@ -250,6 +257,23 @@
         </section>
 
         <section data-auto-animate>
+          <h3>Simply Cherry</h3>
+          <div class="container">
+            <img src="./public/simple-cherry.jpeg" width="50%" height="auto" />
+            <ul>
+              <li>\( x \) and $ y $ are leaves</li>
+              <li>$ p_x $ is a tree vertex</li>
+              <li>$(x,y)$ is a simple cherry</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <img src="./public/phylo-network.jpeg" width="50%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
           <h3>Reticulated Cherry</h3>
           <img src="./public/ret-cherry.jpeg" width="50%" height="auto" />
         </section>
@@ -259,8 +283,37 @@
           <div class="container">
             <img src="./public/ret-cherry.jpeg" width="50%" height="auto" />
             <ul>
-              <li>$ x $ and $ y $ are leaves</li>
+              <li>$ x $, $ y $ and $z$ are leaves</li>
               <li>$ p_x $ is a reticulation</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <div class="container">
+            <img src="./public/ret-cherry-y.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <div class="container">
+            <img src="./public/ret-cherry-y.jpeg" width="50%" height="auto" />
+            <ul>
+              <li>$(x,y)$ is the reticulated cherry</li>
+              <li>$(p_y, p_x)$ is the middle edge</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
+          <div class="container">
+            <img src="./public/ret-cherry-z.jpeg" width="50%" height="auto" />
+            <ul>
+              <li>$(x,z)$ is the reticulated cherry</li>
+              <li>$(p_z, p_x)$ is the middle edge</li>
             </ul>
           </div>
         </section>
@@ -280,15 +333,24 @@
 
         <section data-auto-animate>
           <h3>Simple Cherry</h3>
+          <img
+            src="./public/simply-cherry-picked1.jpeg"
+            width="50%"
+            height="auto"
+          />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Simple Cherry</h3>
           <div class="container">
             <img
-              src="./public/simple-cherry-taxa.jpeg"
+              src="./public/simply-cherry-picked1.jpeg"
               width="50%"
               height="auto"
             />
 
             <img
-              src="./public/simple-cherry-picked.jpeg"
+              src="./public/simply-cherry-picked2.jpeg"
               width="50%"
               height="auto"
             />
@@ -312,24 +374,19 @@
 
         <section data-auto-animate>
           <h3>Reticulated Cherry</h3>
+          <img src="./public/ret-cherry-del.jpeg" width="50%" height="auto" />
+        </section>
+
+        <section data-auto-animate>
+          <h3>Reticulated Cherry</h3>
           <div class="container">
+            <img src="./public/ret-cherry-del.jpeg" width="50%" height="auto" />
             <img
-              src="./public/ret-cherry-taxa3.jpeg"
+              src="./public/ret-cherry-del2.jpeg"
               width="50%"
               height="auto"
             />
-
-            <img src="./public/ret-cherry-del.jpeg" width="50%" height="auto" />
           </div>
-        </section>
-
-        <section>
-          <h3>Reticulated Cherry</h3>
-          <img
-            src="./public/ret-cherry-reduced.jpeg"
-            width="50%"
-            height="auto"
-          />
         </section>
 
         <section data-transition-speed="zoom">
@@ -356,8 +413,20 @@
           <img src="./public/orchard-4.png" width="60%" height="60%" />
         </section>
 
-        <section data-transition-speed="fast">
+        <section data-auto-animate>
           <h3>Orchard Networks</h3>
+          <p>
+            Phylogenetic networks that can be reduced to a single leaf using
+            cherry picking operations
+          </p>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Orchard Networks</h3>
+          <p>
+            Phylogenetic networks that can be reduced to a single leaf using
+            cherry picking operations
+          </p>
           <p>Subnetworks of orchard networks are also orchard networks</p>
         </section>
 
