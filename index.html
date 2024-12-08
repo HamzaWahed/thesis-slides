@@ -87,8 +87,8 @@
         <section data-auto-animate>
           <h3>Phylogenetic Networks</h3>
           <p>
-            A network is a graph $G = (V,E,\rho)$ with a taxon labelling
-            function $\phi$, that only assings labels to leaf vertices.
+            A phylogenetic network is any graph used to represent evolutionary
+            relationships between a set of taxa that labels the leaves
           </p>
         </section>
 
@@ -111,6 +111,16 @@
           <ul>
             <li>The root only has $1$ child</li>
             <li>Any reticulation $r$ has $2$ parents and $1$ child</li>
+          </ul>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Phylogenetic Networks</h3>
+          <p>binary phylogenetic networks</p>
+          <ul>
+            <li>The root only has $1$ child</li>
+            <li>Any reticulation $r$ has $2$ parents and $1$ child</li>
+            <li>No vertices with $1$ parent and $1$ child</li>
           </ul>
         </section>
 
@@ -379,14 +389,7 @@
 
         <section data-auto-animate>
           <h3>Reticulated Cherry</h3>
-          <div class="container">
-            <img src="./public/ret-cherry-del.jpeg" width="50%" height="auto" />
-            <img
-              src="./public/ret-cherry-del2.jpeg"
-              width="50%"
-              height="auto"
-            />
-          </div>
+          <img src="./public/ret-cherry-del2.jpeg" width="50%" height="auto" />
         </section>
 
         <section data-transition-speed="zoom">
@@ -403,13 +406,13 @@
 
         <section data-transition-speed="fast">
           <h3>Orchard Networks</h3>
-          <p>\(S = \langle (c,b), (a,r) \rangle \)</p>
+          <p>\(S = \langle (c,b), (a,c) \rangle \)</p>
           <img src="./public/orchard-3.png" width="80%" height="80%" />
         </section>
 
         <section data-transition-speed="fast">
           <h3>Orchard Networks</h3>
-          <p>\(S = \langle (c,b), (a,r), (u,v) \rangle \)</p>
+          <p>\(S = \langle (c,b), (a,c), (c,b) \rangle \)</p>
           <img src="./public/orchard-4.png" width="60%" height="60%" />
         </section>
 
@@ -481,6 +484,16 @@
 
         <section data-auto-animate>
           <h3>MACRS?</h3>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Agreement Cherry Reduced Subnetwork</h3>
+          <p>
+            An agreement cherry reduced subnetwork of two networks $N_1$ and
+            $N_2$, is a network $N^*$ such that there exists cherry picking
+            sequences $S_1$ and $S_2$ for which $N_1 \langle S_1 \rangle \cong
+            N^*$ and $N_2 \langle S_2 \rangle \cong N^*$.
+          </p>
         </section>
 
         <section data-auto-animate>
@@ -604,6 +617,22 @@
           <div class="container">
             <img src="./public/Todo.jpeg" width="50%" height="auto" />
             <img src="./public/Todo 2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/pick-1.jpeg" width="50%" height="auto" />
+            <img src="./public/pick-2.jpeg" width="50%" height="auto" />
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>MACRS Algorithm</h3>
+          <div class="container">
+            <img src="./public/pick-3.jpeg" width="50%" height="auto" />
+            <img src="./public/pick-4.jpeg" width="50%" height="auto" />
           </div>
         </section>
 
